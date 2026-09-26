@@ -1,0 +1,21 @@
+{
+  "name": "cse412-project",
+  "private": true,
+  "version": "0.1.0",
+  "description": "AI-driven culinary assistant (CSE 412 Group 23)",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev:server": "npm run dev -w server",
+    "dev:client": "npm run dev -w client",
+    "build": "npm run build -w server && npm run build -w client",
+    "db:create": "psql -U postgres -c \"CREATE DATABASE culinary\"",
+    "db:schema": "psql -U postgres -d culinary -f db/schema.sql"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}
