@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS recipes (
   id                            SERIAL PRIMARY KEY,
+  source_id                     TEXT UNIQUE,  --maybe keep the source id from csv, can have duplicate import ? not sure if needed.
   title                         TEXT NOT NULL,
   url                           TEXT,
   meal_type                     TEXT,
@@ -23,7 +24,7 @@ CREATE TABLE IF NOT EXISTS recipes (
   carbs_g_per_serving           NUMERIC,
   fiber_g_per_serving           NUMERIC,
   sodium_mg_per_serving         NUMERIC,
-  nutrition_confidence          NUMERIC,
+  nutrition_confidence          TEXT,
   image1                        TEXT
 );
 
