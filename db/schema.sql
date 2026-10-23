@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS recipes (
   carbs_g_per_serving           NUMERIC,
   fiber_g_per_serving           NUMERIC,
   sodium_mg_per_serving         NUMERIC,
-  nutrition_confidence          NUMERIC,
+  nutrition_confidence          TEXT,
   image1                        TEXT
 );
 
