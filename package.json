@@ -12,8 +12,11 @@
     "dev:server": "npm run dev -w server",
     "dev:client": "npm run dev -w client",
     "build": "npm run build -w server && npm run build -w client",
-    "db:create": "psql -U postgres -c \"CREATE DATABASE culinary\"",
-    "db:schema": "psql -U postgres -d culinary -f db/schema.sql"
+    "db:create": "createdb culinary",
+    "db:schema": "psql -d culinary -f db/schema.sql",
+    "db:seed": "psql -d culinary -f db/seed.sql",
+    "db:setup": "npm run db:create && npm run db:schema && npm run db:seed",
+    "db:import": "psql -d culinary -f db/import.sql"
   },
   "devDependencies": {
     "concurrently": "^10.0.5"
