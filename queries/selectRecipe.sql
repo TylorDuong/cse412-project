@@ -14,3 +14,4 @@ WHERE	(title ILIKE 'z%') AND
 		(array_to_string(ner, ' ') ILIKE '%%') AND
 	  	energy_kcal_per_serving BETWEEN 0 AND 8000
 ORDER BY energy_kcal_per_serving ASC
+LIMIT 10;
