@@ -9,9 +9,11 @@ SELECT  id AS ID,
 		ner AS "Ingredients (ner)",
 		url AS URL
 		FROM public.recipes
-WHERE	(title ILIKE 'z%') AND
-		(array_to_string(ner, ' ') NOT ILIKE '%zucchini%') AND
+WHERE	(title ILIKE '%V%') AND
+		(array_to_string(ner, ' ') NOT ILIKE '%r%') AND
 		(array_to_string(ner, ' ') ILIKE '%%') AND
-	  	energy_kcal_per_serving BETWEEN 0 AND 8000
+	  	energy_kcal_per_serving BETWEEN 0 AND 8000 
 ORDER BY energy_kcal_per_serving ASC
-LIMIT 10;
+LIMIT 200;
+
+
